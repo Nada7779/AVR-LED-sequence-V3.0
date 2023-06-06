@@ -29,7 +29,9 @@ void Timer0_init(TIMER0_Mode_type mode,TIMER0SCALER_type scaler)
 	  case TIMER0_FASTPWM_MODE:
 	                          TCCR0 |= (1<<WGM00);
 	                          TCCR0 |= (1<<WGM01);
-							  break;							  
+							  break;
+	  default:
+		  //Error handling
 }
 TCNT0 = 0X00; // Timer initial value is 0
 TCCR0  &= 0xf8; // make sure that the first three bits are set to zeros 11111000 
